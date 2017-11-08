@@ -88,6 +88,7 @@
 *** Releases and Change Log                                               ***
 *****************************************************************************
 
+<<<<<<< HEAD
 *** 17.6.4 ***
 - HAL: Fixed ADC does not build on STM32F030 (bug #903).
 - LIB: Fixed typo for function evtStop (bug #897).
@@ -111,6 +112,37 @@
 - LIB: Fixed heap allocator returning unaligned blocks (bug #888).
 
 *** 17.6.1 ***
+=======
+*** Next ***
+- NEW: Modified the STM32 OTGv1 driver to work without pump thread, transfers
+       are now done in the ISR.
+- NEW: Added I-class functions to the serial driver: sdGetI(), sdReadI(),
+       sdPutI() and sdWriteI().
+- NEW: Modified the HAL queues to improve performance. Added new
+       functions iqGetI(), iqReadI(), oqPutI() and oqWriteI().
+- NEW: Added an "Objects FIFO" object to the OS Library, it allows to
+       exchange complex objects between threads/ISRs. It is based on a
+       mailbox and a guarded memory pool.
+- NEW: Added an "Objects Factory" to the OS Library, it allows to dynamically
+       allocate reference-counted kernel objects/buffers or to register
+       static objects. Allocated/registered objects can be retrieved by name.
+- NEW: The OS Library now has its own test suite.
+- NEW: Updated STM32F1xx headers to 1.6, STM32F3xx to 1.9, STM32L0xx to 1.10,
+       STM32L4xx to 1.9, STM32H7xx to 1.1.
+- NEW: Updated CMSIS to 5.1.1, changed directories organization under
+       /os/ext/ARM/CMSIS to match the one in CMSIS, removed /os/ext/CMSIS.
+- NEW: Integrated lwIP 2.0.3 and improved lwIP bindings.
+- NEW: The chconf.h configuration files now are tagged with the version
+       number for safety. The system rejects obsolete files during
+       compilation.
+- NEW: Added alignment capability to memory pools.
+- NEW: Mailbox API changed by adding "Timeout" to those function that have
+       timeout capability, for consistency with the rest of the system.
+- NEW: Modified mailboxes to use a size_t as counter instead of a cnt_t,
+       this is a leftover of semaphores in previous mailboxes implementation.
+- NEW: Added a new functions to RT events chEvtGetAndClearEventsI() and
+       chEvtAddEventsI().
+>>>>>>> 881cec6... Modified the STM32 OTGv1 driver to work without pump thread, transfers are now done in the ISR.
 - NEW: Integrated the latest FatFS 0.13 with patches.
 - NEW: Improved RT and NIL test suite to report version numbers and
        configuration settings.
