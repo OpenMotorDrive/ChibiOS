@@ -114,6 +114,7 @@
 *** 17.6.1 ***
 =======
 *** Next ***
+<<<<<<< HEAD
 - NEW: Modified the STM32 OTGv1 driver to work without pump thread, transfers
        are now done in the ISR.
 - NEW: Added I-class functions to the serial driver: sdGetI(), sdReadI(),
@@ -204,3 +205,41 @@
 
 *** 17.6.0 ***
 - First 17.6.0 release, see release note 17.6.0.
+=======
+- NEW: Added HAL support for STM32L443.
+- NEW: Added support for LDM303AGR 6 axis Accelerometer\Magnetometer MEMS.
+- NEW: Added support for LSM6DSL 6 axis Accelerometer\Gyroscope MEMS.
+- NEW: Added support for LPS22HB 2 axis Barometer\Thermometer MEMS.
+- NEW: Separated OSLIB from RT and NIL, now it is a separate "product" with
+       its own version, configuration file and licensing. The library will
+       grow to include more functionalities.
+       RT and NIL will contain only the core functionalities, everything else
+       is shared library code.
+- EX:  Updated HTS221 to 1.1.0 (backported to 18.2.1).
+- EX:  Updated L3GD20 to 1.1.0 (backported to 18.2.1).
+- EX:  Updated LIS3DSH to 1.1.0 (backported to 18.2.1).
+- EX:  Updated LIS3MDL to 1.1.0 (backported to 18.2.1).
+- EX:  Updated LIS302DL to 1.1.0 (backported to 18.2.1).
+- EX:  Updated LPS25H to 1.1.0 (backported to 18.2.1).
+- EX:  Updated LSM303DLHC to 1.1.0 (backported to 18.2.1).
+- HAL: Fixed function mfsReadRecord() causes memory corruption because a
+       buffer overflow (bug #931)(backported to 18.2.1).
+- HAL: Fixed silence GCC 7.3.0 warning (bug #930)(backported to 18.2.1
+       and 17.6.5).
+- HAL: Fixed invalid SAI1 clock selection on STM32F7xx (bug #929)(backported
+       to 18.2.1 and 17.6.4).
+- HAL: Fixed invalid clock checks for SDMMC1 and SDMMC2 on STM32F7xx
+       (bug #928)(backported to 18.2.1).
+- HAL: Fixed useless writes in read-only CFGR_SWS field on all STM32Fxx
+       (bug #927)(backported to 18.2.1 and 17.6.4).
+- HAL: Fixed typo in hal_pal.h (bug #926)(backported to 18.2.1).
+- HAL: Fixed I2C address not accepted (bug #923)(backported to 18.2.1
+       and 17.6.4).
+- HAL: Fixed problem with HSI48 on STM32L4xx (bug #922)(backported to 18.2.1).
+- HAL: Fixed invalid implementation of palWaitPadTimeoutS() and
+       palWaitLineTimeoutS() APIs (bug #921)(backported to 18.2.1).
+- HAL: Fixed wrong DMA settings for STM32F76x I2C3 and I2C4 (bug #920)
+       (backported to 18.2.1 and 17.6.4).
+- HAL: Fixed wrong flash waiting state for STM32F7xx (bug #918)
+       (backported to 18.2.1 and 17.6.4).
+>>>>>>> 354096a... Fixed bug #930.
