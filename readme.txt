@@ -222,6 +222,122 @@
 - EX:  Updated LIS302DL to 1.1.0 (backported to 18.2.1).
 - EX:  Updated LPS25H to 1.1.0 (backported to 18.2.1).
 - EX:  Updated LSM303DLHC to 1.1.0 (backported to 18.2.1).
+<<<<<<< HEAD
+=======
+- HAL: Fixed timing problem in STM32 OTGv1 driver (bug #996)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed restrictive check in MMC-SPI driver (bug #995)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed misplaced check in STM32 ST driver (bug #994)
+       (backported to 18.2.2 and 17.6.5).
+- OTH: Fixed ARM CMx vectors table without thumb bit set for unused vectors
+       (bug #993)(backported to 18.2.2).
+- HAL: Fixed STM32F7xx I2SPLL not fully initialized (bug #992)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed ethernet registry error for STM32F469/479 (bug #990)
+       (backported to 18.2.2 and 17.6.5).
+- RT:  Fixed bug in chEvtBroadcastFlagsI (bug #989)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed OS-Less Cortex-M HAL functionality broken (bug #987)
+       (backported to 18.2.2).
+- HAL: Fixed broken functionality of MFS module (bug #986)
+       (backported to 18.2.2).
+- NIL: Fixed scheduler misbehaving in rare cases (bug #983)
+       (backported to 18.2.2 and 17.6.5).
+- NIL: Fixed function chThdSuspendTimeoutS() ignoring TIME_IMMEDIATE (bug #982)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed mTM32L071/72 entries in registry (bug #981)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed TIM3 missing from STM32L0xx RCC macros (bug #980)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed invalid STM32 ADCv3 clock selection for L4 and L4+ (bug #979)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed wrong number of endpoints fot STM32F412/413 (bug #978)
+       (backported to 18.2.2 and 17.6.5).
+- RT:  Fixed chEvtGetAndClearFlags(...) does not mask events (bug #977)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed HAL channels chnControl() macro broken (bug #976)
+       (backported to 18.2.2).
+- OTH: Fixed wrong timeout handling in CMSIS OS layer (bug #975)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed invalid checks in STM32F37x HAL related to SDADC (bug #974)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed mii_find_phy excludes PHY address 31 (bug #971)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed option STM32_LSCOSEL not written in STM32L4 HAL (bug #970)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed invalid DFSDM1SEL option in STM32L4 HAL (bug #969)(backported
+       to 18.2.2 and 17.6.5).
+- HAL: Fixed incorrect checks on STM32_SAI2SEL option in STM32L4 HAL
+       (bug #968)(backported to 18.2.2 and 17.6.5).
+- HAL: Fixed incorrect handling of PDIV dividers in STM32L4 HAL (bug #967)
+       (backported to 18.2.2).
+- HAL: Fixed documentation error in spiStop() (bug #966)(backported
+       to 18.2.2 and 17.6.5).
+- HAL: Fixed missing parenthesis in STM32L073 registry entry (bug #965)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed problem with STM32 RTCv1 and GCC7 compiler (bug #964)(backported
+       to 18.2.2 and 17.6.5).
+- HAL: Fixed invalid timeout calculation in hal_buffers (bug #963)(backported
+       to 18.2.2 and 17.6.5).
+- RT:  Fixed invalid parameter in CH_CFG_SYSTEM_INIT_HOOK hook macro
+       (bug #962)(backported to 18.2.2).
+- OTH: Fixed demos failing to compile (bug #961)(backported to 18.2.2).
+- HAL: Fixed issue in hal_queues (bug #960)(backported to 18.2.2).
+- HAL: Fixed incorrect state change in I2S driver (bug #959)(backported
+       to 18.2.2 and 17.6.5).
+- HAL: Fixed incorrect TCIE handling in STM32 serial drivers (bug #958)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed invalid period calculation in STM32 GPT driver (bug #957)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed missing USART7/8 definitions in STM32F0 HAL (bug #956)(backported
+       to 18.2.2).
+- LIB: Fixed heap allocation issue (bug #955)(backported to 18.2.2 and 17.6.5).
+- HAL: Fixed win32 simulator HAL broken because a typo (bug #954)(backported
+       to 18.2.2).
+- HAL: Fixed race condition in STM32 ADCv3 driver (bug #953)(backported to
+       18.2.2 and 17.6.5).
+- HAL: Fixed wrong registry entries for STM32F030x4 (bug #952)(backported
+       to 18.2.2).
+- HAL: Fixed invalid divider settings in Serial and UART STM32 drivers
+       when USART_CR1_OVER8 is specified (bug #951)(backported to 18.2.2
+       and 17.6.5).
+- NIL: Fixed missing extern declaration in IAR Cortex-M port (bug #950)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed ASCR register invalid handling in STM32 GPIOv3 driver (bug #949)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed missing definition in UART driver (bug #948)(backported
+       to 18.2.2).
+- OTH: Fixed wrong macro check in GCC Cortex-M startup files (bug #947)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed binary instead of logic operator in STM32F4 HAL (bug #946)
+       (backported to 18.2.2 and 17.6.5).
+- HAL: Fixed Mikroe clicker 2 misaligned board file (bug #945)
+       (backported to 18.2.2 and 17.6.5).
+- EX:  Fixed ChibiOS/EX documentation misalignments (bug #943).
+- HAL: Fixed invalid settings in STM32F769I-Discovery board files (bug #942)
+       (backported to 18.2.1 and 17.6.5).
+- OTH: Fixed short branch to _unhandled_exception in vectors.S (bug #941)
+       (backported to 18.2.1).
+- HAL: Fixed IOBus PAL functions missing the const qualifier (bug #940)
+       (backported to 18.2.1 and 17.6.5).
+- HAL: Fixed STM32 USBv1 driver does not reset data toggling bits on endpoint
+       initialization (bug #939)(backported to 18.2.1 and 17.6.5).
+- HAL: Fixed incorrect behavior of USB driver on SET CONFIGURATION (bug #938)
+       (backported to 18.2.1 and 17.6.5).
+- HAL: Fixed macro expansion problem in SPI high level driver (bug #937)
+       (backported to 18.2.1).
+- HAL: Fixed missing CAN2 macros from STM32L4xx stm32_rcc.h file (bug #936)
+       (backported to 18.2.1).
+- OTH: Fixed inclusion order problem in STM32L4 cmparams.h file (bug #935)
+       (backported to 18.2.1 and 17.6.5).
+- HAL: Fixed problem clearing UIF timer flag in STM32 PWM driver (bug #934)
+       (backported to 18.2.1 and 17.6.5).
+- HAL: Fixed USB Serial driver problem with zero-size OUT transactions
+       (bug #933)(backported to 18.2.1 and 17.6.5).
+- HAL: Fixed race condition in STM32 QSPI driver (bug #932)(backported to
+       18.2.1 and 17.6.5).
+>>>>>>> 1396446... Fixed bug #996.
 - HAL: Fixed function mfsReadRecord() causes memory corruption because a
        buffer overflow (bug #931)(backported to 18.2.1).
 - HAL: Fixed silence GCC 7.3.0 warning (bug #930)(backported to 18.2.1
